@@ -33,7 +33,6 @@ builder.Services.AddSwaggerGen(options =>
         Contact = new Microsoft.OpenApi.Models.OpenApiContact
         {
             Name = "Software Challenge"
-            // Url = new Uri("https://www.ironsoftware.com")
         }
     });
 });
