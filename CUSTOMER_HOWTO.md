@@ -374,8 +374,6 @@ decode_keypad("4433555 555666#")  # Output: "HELLO"
 dotnet run --project OldMobileKeypad.Api/OldMobileKeypad.Api.csproj
 ```
 
-Check that you see `Now listening on: http://localhost:5000`
-
 **Solution 2:** Make sure you are in the Development environment:
 
 ```bash
