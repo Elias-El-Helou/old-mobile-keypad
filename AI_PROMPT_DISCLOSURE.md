@@ -297,7 +297,3 @@ I'm ready to explain, defend, or extend any part of this codebase.
 
 **Submitted:** August 2026
 **By:** Elias El Helou (Beirut, Lebanon)
-
-```
-
-```
