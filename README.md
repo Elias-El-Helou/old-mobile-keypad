@@ -800,7 +800,7 @@ The design allows easy additions:
 - Replace REST API with gRPC while keeping library unchanged
 - Add authentication/logging at API layer without touching library
 
-## Lessons Learned (Sales Engineering Perspective)
+## Lessons Learned
 
 ### 1. Understanding Customer Needs
 
@@ -824,10 +824,9 @@ The separate projects, REST API, and how-to guide show you understand:
 
 ## Next Steps
 
-1. **Deploy to GitHub** – Share your code
-2. **Add NuGet packaging** – Make the library easily installable
-3. **Expand API** – Add batch processing, file upload, etc.
-4. **Monitor usage** – Track which features customers use most
+1. **Add NuGet packaging** – Make the library easily installable
+2. **Expand API** – Add batch processing, file upload, etc.
+3. **Monitor usage** – Track which features customers use most
 
 ## License
 
