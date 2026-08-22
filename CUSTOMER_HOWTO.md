@@ -368,10 +368,18 @@ decode_keypad("4433555 555666#")  # Output: "HELLO"
 
 ### Issue: "Connection refused" or "Unable to connect"
 
-**Solution:** Make sure the API is running:
+**Solution 1:** Make sure the API is running:
 
 ```bash
 dotnet run --project OldMobileKeypad.Api/OldMobileKeypad.Api.csproj
+```
+
+Check that you see `Now listening on: http://localhost:5000`
+
+**Solution 2:** Make sure you are in the Development environment:
+
+```bash
+$env:ASPNETCORE_ENVIRONMENT="Development"
 ```
 
 Check that you see `Now listening on: http://localhost:5000`
