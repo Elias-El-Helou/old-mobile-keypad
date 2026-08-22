@@ -184,7 +184,7 @@ If I were to use a single prompt to start this project, it would be:
 
 ### **Single Comprehensive Prompt**
 
-````I need to build a production-ready T9 phone keypad decoder in C#.
+`````I need to build a production-ready T9 phone keypad decoder in C#.
 
 Requirements:
 
@@ -202,14 +202,14 @@ I want:
 3-A REST API wrapper (ASP.NET Core)
 4-Professional error handling
 5-Customer documentation
-6- Code review for production readiness
+6-Code review for production readiness
 
 Please provide guidance on:
 
 1-Architecture (separate projects?)
 2-Algorithm approach (pseudocode first)
 3-Testing strategy
-4-Code quality checklist```
+4-Code quality checklist````
 
 **Why This Prompt?** It provides:
 
@@ -297,4 +297,4 @@ I'm ready to explain, defend, or extend any part of this codebase.
 
 **Submitted:** August 2026
 **By:** Elias El Helou (Beirut, Lebanon)
-````
+`````
