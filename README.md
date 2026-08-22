@@ -571,6 +571,7 @@ Visit `http://localhost:5000` for interactive API documentation.
 
 ## Project Structure
 
+```
 old-mobile-keypad/
 ├── OldMobileKeypad.Library/ # Core library
 │ ├── OldPhonePadDecoder.cs # Main decoder class
@@ -590,6 +591,7 @@ old-mobile-keypad/
 ├── CUSTOMER_HOWTO.md # Customer integration guide
 ├── AI_PROMPT_DISCLOSURE.md # AI usage transparency
 └── .gitignore
+```
 
 ## Keypad Mapping
 
