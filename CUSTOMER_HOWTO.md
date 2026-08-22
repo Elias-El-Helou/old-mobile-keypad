@@ -232,6 +232,30 @@ curl -X POST http://localhost:5000/api/oldphonepad/decode \
 
 ---
 
+Quick Start with the Demo App
+
+The easiest way to test the API is using the included demo app.
+
+Step 1: Start the API
+
+bash
+$env:ASPNETCORE_ENVIRONMENT="Development"
+dotnet run --project OldMobileKeypad.Api/
+
+Step 2: Open the demo
+
+Demo/index.html
+
+Double-click the file or cd Demo and run `python -m http.server 8000` in your terminal to open it in your browser `localhost:8000`.
+
+Step 3: Test it
+
+The demo shows "🟢 Connected" when the API is running
+Enter a T9 sequence and click "Decode"
+Try the quick example buttons
+
+---
+
 ## Using the Interactive API Documentation
 
 You can also test the API visually without curl.

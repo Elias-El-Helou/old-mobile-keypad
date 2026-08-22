@@ -569,29 +569,68 @@ dotnet run --project OldMobileKeypad.Api/OldMobileKeypad.Api.csproj
 
 Visit `http://localhost:5000` for interactive API documentation.
 
+## Interactive Demo
+
+An interactive web-based demo is included so you can test the decoder in your browser without writing code.
+
+### Getting Started with the Demo
+
+1. **Start the API:**
+
+```bash
+   $env:ASPNETCORE_ENVIRONMENT="Development"
+   dotnet run --project OldMobileKeypad.Api/OldMobileKeypad.Api.csproj
+```
+
+2. **Open the demo:**
+   - Navigate to the `Demo/` folder
+   - Open `index.html` in your browser
+   - Or open new terminal and use a local server by typing: `python -m http.server 8000`
+
+3. **Test it:**
+   - The demo connects to your running API
+   - Try the quick example buttons
+   - Or enter your own T9 sequences
+
+### Demo Features
+
+- Real-time T9 sequence decoding
+- Visual keypad mapping reference
+- Quick example buttons for testing
+- Error handling and user feedback
+- Mobile-responsive design
+
 ## Project Structure
 
-```
-old-mobile-keypad/
-├── OldMobileKeypad.Library/ # Core library
-│ ├── OldPhonePadDecoder.cs # Main decoder class
-│ └── OldMobileKeypad.Library.csproj # Library project file
-│
-├── OldMobileKeypad.Tests/ # Unit tests
-│ ├── OldPhonePadDecoderTests.cs # 31 comprehensive tests
-│ └── OldMobileKeypad.Tests.csproj # Test project file
-│
-├── OldMobileKeypad.Api/ # REST API wrapper
-│ ├── Program.cs # Application entry point
-│ ├── OldPhonePadApiModels.cs # Request/Response models
-│ ├── OldPhonePadApiEndpoints.cs # API endpoint definitions
-│ └── OldMobileKeypad.Api.csproj # API project file
-│
-├── README.md # This file
-├── CUSTOMER_HOWTO.md # Customer integration guide
-├── AI_PROMPT_DISCLOSURE.md # AI usage transparency
-└── .gitignore
-```
+### Core Components
+
+**OldMobileKeypad.Library/** (Core Library)
+
+- `OldPhonePadDecoder.cs` – Main decoder class with T9 algorithm
+- `OldMobileKeypad.Library.csproj` – Library project configuration
+
+**OldMobileKeypad.Tests/** (Unit Tests)
+
+- `OldPhonePadDecoderTests.cs` – 31 comprehensive test cases
+- `OldMobileKeypad.Tests.csproj` – Test project configuration
+
+**OldMobileKeypad.Api/** (REST API)
+
+- `Program.cs` – ASP.NET Core application entry point
+- `OldPhonePadApiModels.cs` – Request/Response models
+- `OldPhonePadApiEndpoints.cs` – API endpoint definitions
+- `OldMobileKeypad.Api.csproj` – API project configuration
+
+**Demo/** (Interactive Web Demo)
+
+- `index.html` – Interactive demo application
+
+### Documentation
+
+- `README.md` – Technical documentation (this file)
+- `CUSTOMER_HOWTO.md` – Step-by-step integration guide for customers
+- `AI_PROMPT_DISCLOSURE.md` – Transparency about AI usage in development
+- `.gitignore` – Git ignore rules for .NET projects
 
 ## Keypad Mapping
 

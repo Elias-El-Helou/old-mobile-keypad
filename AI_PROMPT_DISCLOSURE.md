@@ -36,6 +36,12 @@ I used AI as a **thought partner and code quality tool**, not as a replacement f
    - Loop logic with boundary conditions
    - Clean variable naming and code organization
 
+5. **Customer-Facing Demo**
+   - Designed interactive demo app for customers
+   - Implemented connection status tracking
+   - Built real-time API integration in the browser
+   - Handled error states and user feedback
+
 ---
 
 ## What I Used AI For (Enhancement, Not Replacement)
@@ -95,7 +101,13 @@ I verified this matched my actual implementation.
 
 **My Role:** I tested them conceptually, verified they correctly call the API, ensured they handle responses properly.
 
----
+### 6. **Interactive Demo HTML**
+
+**What**: Simple HTML/CSS/JavaScript demo app for testing the API in a browser
+
+**Why**: Customers benefit from a quick visual demo they can use without writing code.
+
+## **My Role**: I designed the functionality, integrated it with the API, handled connection status and error messages.
 
 ## What I Did NOT Use AI For
 
@@ -172,7 +184,7 @@ If I were to use a single prompt to start this project, it would be:
 
 ### **Single Comprehensive Prompt**
 
-I need to build a production-ready T9 phone keypad decoder in C#.
+````I need to build a production-ready T9 phone keypad decoder in C#.
 
 Requirements:
 
@@ -197,7 +209,7 @@ Please provide guidance on:
 1-Architecture (separate projects?)
 2-Algorithm approach (pseudocode first)
 3-Testing strategy
-4-Code quality checklist
+4-Code quality checklist```
 
 **Why This Prompt?** It provides:
 
@@ -250,6 +262,7 @@ When you hire me:
 - I'll use tools (AI, frameworks, libraries) strategically
 - I'll know when to ask for help vs. building custom solutions
 - I'll communicate clearly with both technical and non-technical stakeholders
+- I'll think about customer experience, not just technical delivery (as shown by the demo app)
 
 ---
 
@@ -284,3 +297,4 @@ I'm ready to explain, defend, or extend any part of this codebase.
 
 **Submitted:** August 2026
 **By:** Elias El Helou (Beirut, Lebanon)
+````
