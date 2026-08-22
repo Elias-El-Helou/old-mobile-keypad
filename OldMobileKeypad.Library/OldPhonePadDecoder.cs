@@ -68,31 +68,27 @@ namespace OldMobileKeypad.Library
             if (!input.EndsWith("#"))
                 throw new ArgumentException("Input must end with '#' (send command).", nameof(input));
 
-            // Remove the trailing '#' since we don't need it anymore
+            // Removing'#' since we don't need it anymore
             var sequence = input[..^1];  // [..^1] means "everything except the last char"
 
-            // Create a result string builder - more efficient than string concatenation
+            //More efficient than string concatenation
             var result = new StringBuilder();
 
-                        // CORE DECODING LOOP
-            // We iterate through the sequence, processing each character
+            // Iterating through the sequence, decoding each character
             var i = 0;
 
             while (i < sequence.Length)
             {
                 var currentChar = sequence[i];
 
-                // CASE 1: Handle spaces (pauses)
-                // A space means "I'm done with this button, the next press is a new character"
-                // Example: "222 2" = "CB" (not "C" cycling)
+                //Handle spaces (character skip)
                 if (char.IsWhiteSpace(currentChar))
                 {
                     i++;
                     continue;  // Skip to next character
                 }
 
-                // CASE 2: Handle backspace (*)
-                // Delete the last character we added
+                //Handle backspace (*), delete the last character we added
                 if (currentChar == '*')
                 {
                     if (result.Length > 0)
@@ -101,8 +97,7 @@ namespace OldMobileKeypad.Library
                     continue;
                 }
 
-                // CASE 3: Handle digit input (the main logic)
-                // This is where we count presses and map to letters
+                //Handle digit input (the main logic), count presses and map to letters
                 if (char.IsDigit(currentChar))
                 {
                     // Count consecutive presses of the SAME button
@@ -118,8 +113,7 @@ namespace OldMobileKeypad.Library
                         i++;
                     }
 
-                    // Now we know: which button (buttonChar) and how many presses (pressCount)
-                    // Look up the characters on that button
+                    //The button is buttonChar and the number of presses is pressCount
                     if (KeypadMapping.TryGetValue(buttonChar, out var characters))
                     {
                         // Use modulo to cycle through available characters
@@ -135,7 +129,7 @@ namespace OldMobileKeypad.Library
                     continue;
                 }
 
-                // If we reach here, it's an unexpected character - skip it
+                //Skip unexcpected character
                 i++;
             }
 

@@ -8,15 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 // 1. ADD SERVICES TO THE CONTAINER
 // ============================================================================
 
-// Add CORS support
-// This allows customers to call the API from web browsers (different domains)
+//Add CORS support and allow customers to call the API from web browsers
 builder.Services.AddCors(options =>
 {
+    // Allow any domain to call this API, allow all http methods and any header
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin()      // Allow any domain to call this API
-              .AllowAnyMethod()       // Allow GET, POST, PUT, DELETE, etc.
-              .AllowAnyHeader();      // Allow any headers
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
@@ -46,18 +46,7 @@ var app = builder.Build();
 // 3. CONFIGURE THE HTTP REQUEST PIPELINE
 // ============================================================================
 
-// Enable Swagger UI (interactive API documentation)
 // In development, Swagger is automatically enabled
-// In production, you might want to disable it for security
-// if (app.Environment.IsDevelopment())
-// {
-//     app.UseSwagger();
-//     app.UseSwaggerUI(options =>
-//     {
-//         options.SwaggerEndpoint("/swagger/v1/swagger.json", "OldPhonePad API v1");
-//         options.RoutePrefix = string.Empty;  // Serve Swagger UI at root (http://localhost:5000)
-//     });
-// }
 
 Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
 Console.WriteLine($"IsDevelopment: {app.Environment.IsDevelopment()}");
@@ -73,13 +62,11 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    Console.WriteLine("⚠️  WARNING: Not in Development mode - Swagger not registered!");
+    Console.WriteLine("WARNING: Not in Development mode - Swagger not registered!");
 }
 
-// Enable HTTPS redirection (in production)
+// Enable HTTPS redirection and CORS
 app.UseHttpsRedirection();
-
-// Enable CORS
 app.UseCors("AllowAll");
 
 // ============================================================================
@@ -90,8 +77,6 @@ app.UseCors("AllowAll");
 app.MapOldPhonePadApi();
 
 // Root endpoint - redirect to Swagger UI
-// app.MapGet("/", () => Results.Redirect("/swagger"))
-//     .ExcludeFromDescription();  // Don't show this in Swagger docs
 app.MapGet("/api/oldphonepad", () => Results.Redirect("/"))
     .ExcludeFromDescription();
 // ============================================================================
